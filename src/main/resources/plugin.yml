@@ -4,7 +4,7 @@ version: 1.0.0 # Replace with your own plugin version. Should rise on updates
 main: de.eazypaul.paulCodesAddonPack.PaulCodesAddonPack # Replace your new main class (after changing namespace)
 api-version: 1.16
 authors: [ eazypaulCode ] # Replace with your name
-description: paulCodes's Mutils Addon Pack! Some nice challenges to play with your friends or on your own. # Replace with your fancy description
+description: paulCodes's MUtils Addon Pack! Some nice challenges to play with your friends or on your own. # Replace with your fancy description
 website: https://eazypaul.de/
 softdepend: [ MUtils-Challenge ] # IMPORTANT - Keep this to load MChallenge before your plugin
 libraries:

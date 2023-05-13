@@ -10,7 +10,6 @@ paulCodesAddonPack is an Addon Pack for [MUtils](https://mutils.net/).
 4. Enjoy the challenges!
 
 ## Challenges
-Below is a list of all extra Challenges you get by using this Addon Pack.
-
+Below is a list of all the extra challenges that you will get when you use this addon pack.
 1. Damage on Move
 -> You will get hurt when you move.
