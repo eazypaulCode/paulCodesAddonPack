@@ -1,11 +1,11 @@
-package de.miraculixx.paulCodesAddonPack
+package de.eazypaul.paulCodesAddonPack
 
 import de.miraculixx.challenge.api.MChallengeAPI
 import de.miraculixx.challenge.api.settings.ChallengeData
-import de.miraculixx.paulCodesAddonPack.utils.AddonMod
-import de.miraculixx.paulCodesAddonPack.utils.cmp
-import de.miraculixx.paulCodesAddonPack.utils.plus
-import de.miraculixx.paulCodesAddonPack.utils.prefix
+import de.eazypaul.paulCodesAddonPack.utils.AddonMod
+import de.eazypaul.paulCodesAddonPack.utils.cmp
+import de.eazypaul.paulCodesAddonPack.utils.plus
+import de.eazypaul.paulCodesAddonPack.utils.prefix
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json

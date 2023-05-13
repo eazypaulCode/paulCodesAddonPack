@@ -1,4 +1,4 @@
-package de.miraculixx.paulCodesAddonPack
+package de.eazypaul.paulCodesAddonPack
 
 import net.axay.kspigot.main.KSpigot
 

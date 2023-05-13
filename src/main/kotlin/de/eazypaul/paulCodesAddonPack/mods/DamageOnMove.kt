@@ -1,8 +1,8 @@
-package de.miraculixx.paulCodesAddonPack.mods
+package de.eazypaul.paulCodesAddonPack.mods
 
 import de.miraculixx.challenge.api.modules.challenges.Challenge
-import de.miraculixx.paulCodesAddonPack.AddonManager
-import de.miraculixx.paulCodesAddonPack.utils.AddonMod
+import de.eazypaul.paulCodesAddonPack.AddonManager
+import de.eazypaul.paulCodesAddonPack.utils.AddonMod
 import net.axay.kspigot.event.listen
 import net.axay.kspigot.event.register
 import net.axay.kspigot.event.unregister

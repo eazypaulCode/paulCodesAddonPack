@@ -1,4 +1,6 @@
-package de.miraculixx.paulCodesAddonPack.utils
+@file:Suppress("UNUSED")
+
+package de.eazypaul.paulCodesAddonPack.utils
 
 import net.kyori.adventure.audience.Audience
 import net.kyori.adventure.text.Component

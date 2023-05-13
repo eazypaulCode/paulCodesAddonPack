@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "de.eazypaul"
-version = "1.0.1"
+version = "1.1.1"
 
 repositories {
     mavenCentral()

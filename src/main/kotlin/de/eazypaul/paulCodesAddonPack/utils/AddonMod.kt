@@ -1,14 +1,14 @@
-package de.miraculixx.paulCodesAddonPack.utils
+package de.eazypaul.paulCodesAddonPack.utils
 
-import de.miraculixx.paulCodesAddonPack.AddonManager
-import de.miraculixx.paulCodesAddonPack.mods.DamageOnMove
+import de.eazypaul.paulCodesAddonPack.AddonManager
+import de.eazypaul.paulCodesAddonPack.mods.DamageOnMove
 import de.miraculixx.challenge.api.modules.challenges.ChallengeTags
 import de.miraculixx.challenge.api.modules.challenges.CustomChallengeData
 import de.miraculixx.challenge.api.settings.ChallengeData
 import de.miraculixx.challenge.api.settings.ChallengeIntSetting
 import de.miraculixx.challenge.api.utils.Icon
 import de.miraculixx.challenge.api.utils.IconNaming
-import de.miraculixx.paulCodesAddonPack.PaulCodesAddonPack
+import de.eazypaul.paulCodesAddonPack.PaulCodesAddonPack
 import java.util.*
 
 enum class AddonMod(val uuid: UUID) {
