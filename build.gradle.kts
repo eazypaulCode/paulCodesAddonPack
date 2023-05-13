@@ -1,10 +1,12 @@
-
 plugins {
     kotlin("jvm") version "1.8.20"
     kotlin("plugin.serialization") version "1.8.10"
     id("io.papermc.paperweight.userdev") version "1.5.0"
     id("xyz.jpenilla.run-paper") version "1.1.0"
 }
+
+group = "de.eazypaul"
+version = "1.0.0"
 
 repositories {
     mavenCentral()
@@ -35,5 +37,8 @@ tasks {
     }
     compileKotlin {
         kotlinOptions.jvmTarget = "17"
+    }
+    assemble {
+        dependsOn(reobfJar)
     }
 }
