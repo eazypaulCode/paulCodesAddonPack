@@ -1,0 +1,13 @@
+name: paulCodeAddonPack # Replace with your own plugin name. You can use the MUtils namespace to highlight the connection
+load: STARTUP
+version: 1.0.0 # Replace with your own plugin version. Should rise on updates
+main: de.eazypaul.paulCodesAddonPack.PaulCodesAddonPack # Replace your new main class (after changing namespace)
+api-version: 1.16
+authors: [ eazypaulCode ] # Replace with your name
+description: paulCodes's Mutils Addon Pack! Some nice challenges to play with your friends or on your own. # Replace with your fancy description
+website: https://eazypaul.de/
+softdepend: [ MUtils-Challenge ] # IMPORTANT - Keep this to load MChallenge before your plugin
+libraries:
+  - "org.jetbrains.kotlin:kotlin-stdlib:1.8.10"
+  - "org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1"
+  - "net.axay:kspigot:1.19.2"
