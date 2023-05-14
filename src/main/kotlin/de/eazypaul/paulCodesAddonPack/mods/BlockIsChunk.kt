@@ -2,16 +2,23 @@ package de.eazypaul.paulCodesAddonPack.mods
 
 import de.eazypaul.paulCodesAddonPack.AddonManager
 import de.eazypaul.paulCodesAddonPack.utils.AddonMod
+import de.eazypaul.paulCodesAddonPack.utils.cmp
+import de.eazypaul.paulCodesAddonPack.utils.plus
+import de.eazypaul.paulCodesAddonPack.utils.prefix
 import de.miraculixx.challenge.api.modules.challenges.Challenge
 import net.axay.kspigot.event.listen
 import net.axay.kspigot.event.register
 import net.axay.kspigot.event.unregister
+import net.axay.kspigot.extensions.broadcast
 import net.axay.kspigot.extensions.bukkit.allBlocks
 import net.axay.kspigot.extensions.onlinePlayers
 import net.axay.kspigot.extensions.worlds
+import net.axay.kspigot.runnables.taskRunLater
+import net.kyori.adventure.text.format.NamedTextColor
 import net.kyori.adventure.util.TriState
 import org.bukkit.*
 import org.bukkit.event.block.BlockPlaceEvent
+import org.bukkit.event.player.PlayerRespawnEvent
 import java.io.File
 import java.util.*
 
@@ -27,10 +34,15 @@ class BlockIsChunk: Challenge {
 
     override fun start(): Boolean {
         val settings = AddonManager.getSettings(AddonMod.BLOCK_IS_CHUNK).settings
+        insecureMode = settings["insecure"]?.toBool()?.getValue() ?: false
+        broadcast(prefix + cmp("Information", NamedTextColor.BLUE)
+                + cmp(":", NamedTextColor.DARK_GRAY)
+                + cmp(" ") + cmp("Your challenge is not bugged, the worlds are being generated. This can take up to ")
+                + cmp("a minute", NamedTextColor.BLUE)
+                + cmp(".", NamedTextColor.DARK_GRAY))
         overworld = WorldCreator.name(worldName).keepSpawnLoaded(TriState.FALSE).environment(World.Environment.NORMAL).createWorld() ?: return false
         nether = WorldCreator.name("${worldName}_nether").keepSpawnLoaded(TriState.FALSE).environment(World.Environment.NETHER).createWorld() ?: return false
         end = WorldCreator.name("${worldName}_the_end").keepSpawnLoaded(TriState.FALSE).environment(World.Environment.THE_END).createWorld() ?: return false
-        insecureMode = settings["insecure"]?.toBool()?.getValue() ?: false
         val loc = overworld.spawnLocation
         onlinePlayers.forEach { player ->
             player.teleportAsync(loc)
@@ -53,10 +65,12 @@ class BlockIsChunk: Challenge {
 
     override fun register() {
         onBlockPlace.register()
+        onRespawn.register()
     }
 
     override fun unregister() {
         onBlockPlace.unregister()
+        onRespawn.unregister()
     }
 
     private val onBlockPlace = listen<BlockPlaceEvent>(register = false) { event ->
@@ -71,6 +85,16 @@ class BlockIsChunk: Challenge {
                 Material.BEDROCK, Material.END_PORTAL_FRAME, Material.END_PORTAL, Material.WATER, Material.LAVA, Material.AIR -> continue
                 else -> block.type = material
             }
+        }
+    }
+
+    private val onRespawn = listen<PlayerRespawnEvent>(register = false) { event ->
+        val player = event.player
+        if (player.potentialBedLocation != null) return@listen
+        event.respawnLocation = overworld.spawnLocation
+        player.sendMessage(prefix + cmp("You have been automatically respawned in the challenge world!"))
+        taskRunLater(1L, false) {
+            player.playSound(player, Sound.ENTITY_ENDERMAN_TELEPORT, 2f, 1f)
         }
     }
 

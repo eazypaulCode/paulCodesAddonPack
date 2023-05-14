@@ -1,5 +1,6 @@
 package de.eazypaul.paulCodesAddonPack
 
+import de.eazypaul.paulCodesAddonPack.listener.JoinListener
 import net.axay.kspigot.main.KSpigot
 
 class PaulCodesAddonPack : KSpigot() {
@@ -16,6 +17,7 @@ class PaulCodesAddonPack : KSpigot() {
 
     override fun startup() {
         AddonManager.loadMods()
+        JoinListener
     }
 
     override fun shutdown() {

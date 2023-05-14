@@ -25,7 +25,7 @@ enum class AddonMod(val uuid: UUID) {
                 uuid,
                 DamageOnMove(),
                 AddonManager.getSettings(this),
-                Icon("LEATHER_BOOTS", naming = IconNaming(cmp("Damage on Move"), listOf(cmp("You will get hurt",), cmp("when you move.")))),
+                Icon("LEATHER_BOOTS", naming = IconNaming(cmp("Damage on Move"), listOf(cmp("You will get hurt"), cmp("when you move.")))),
                 setOf(ChallengeTags.HARD, ChallengeTags.FREE),
                 PaulCodesAddonPack.addonName
             )
@@ -33,7 +33,8 @@ enum class AddonMod(val uuid: UUID) {
                 uuid,
                 BlockIsChunk(),
                 AddonManager.getSettings(this),
-                Icon("DIAMOND_BLOCK", naming = IconNaming(cmp("Block is Chunk"), listOf(cmp("If you place an block",), cmp("the entire chunk will"), cmp("be replaced.")))),
+                Icon("DIAMOND_BLOCK", naming = IconNaming(cmp("Block is Chunk"),
+                    listOf(cmp("If you place an block"), cmp("the entire chunk will"), cmp("be replaced.")))),
                 setOf(ChallengeTags.FUN, ChallengeTags.FREE),
                 PaulCodesAddonPack.addonName
             )
@@ -55,7 +56,8 @@ enum class AddonMod(val uuid: UUID) {
                     "insecure" to ChallengeBoolSetting("END_PORTAL_FRAME")
                 ),
                 mapOf(
-                    "insecure" to IconNaming(cmp("Insecure Mode"), listOf(cmp("This will enable, that"), cmp("laggy blocks can be replaced."), cmp("Use with caution!", NamedTextColor.RED)))
+                    "insecure" to IconNaming(cmp("Insecure Mode"), listOf(cmp("This will enable, that"),
+                        cmp("laggy blocks can be replaced."), cmp("Use with caution!", NamedTextColor.RED)))
                 )
             )
         }

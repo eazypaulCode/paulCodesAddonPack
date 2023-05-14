@@ -26,9 +26,9 @@ class DamageOnMove : Challenge {
         onMove.unregister()
     }
 
-    private val onMove = listen<PlayerMoveEvent>(register = false) {
-        if (it.from.block != it.to.block) {
-            val player = it.player
+    private val onMove = listen<PlayerMoveEvent>(register = false) {event ->
+        if (event.from.block != event.to.block) {
+            val player = event.player
             player.health = (player.health - damage).coerceAtLeast(0.0)
             player.damage(0.01)
         }
